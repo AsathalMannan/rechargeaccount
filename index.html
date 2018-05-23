@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <title>Recharge Accounts - Rahman Retailer</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <h1>Recharge Accounts</h1>
+    </nav>
+    <section class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 ml-4" id="addentry">
+                    <h5 class="text-center text-light font-weight-bold pt-2">Weekly Entry</h5>
+                    <div class="card-deck mt-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h4 class="card-title">airtel</h4>
+                                <table id="attable" class="table">
+                                    <tr id="athtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount">3560</td></tr>
+                                    <tr class="htmlentry"></tr>
+                                    <tr class="total"><td></td><td></td><td>Total</td><td class="amount">8563</td></tr>
+                                    <tr><td></td><td>15-mar</td><td>Current Balance</td><td class="amount" id="balance_at">0</td></tr>
+                                    <tr class="wsales"><td></td><td>15-mar</td><td>Sales</td><td id="atcalcsales" class="amount sales">0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h4 class="card-title">jio</h4>
+                                <table id="jiotable" class="table">
+                                    <tr><td></td><td>05-mar</td><td>Last Balance</td><td class="amount">3560</td></tr>
+                                    <tr class="htmlentry"></tr>
+                                    <tr class="total"><td></td><td></td><td>Total</td><td class="amount">8563</td></tr>
+                                    <tr><td></td><td>15-mar</td><td>Current Balance</td><td class="amount" id="balance_jio">0</td></tr>
+                                    <tr class="wsales"><td></td><td>15-mar</td><td>Sales</td><td id="jiocalcsales" class="amount sales">0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h4 class="card-title">vodafone</h4>
+                                <table id="votable" class="table">
+                                    <tr><td></td><td>05-mar</td><td>Last Balance</td><td class="amount">3560</td></tr>
+                                    <tr class="htmlentry"></tr>
+                                    <tr class="total"><td></td><td></td><td>Total</td><td class="amount">8563</td></tr>
+                                    <tr><td></td><td>15-mar</td><td>Current Balance</td><td class="amount" id="balace_vo">0</td></tr>
+                                    <tr class="wsales"><td></td><td>15-mar</td><td>Sales</td><td id="vocalcsales" class="amount sales">0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-deck mt-3 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h4 class="card-title">idea</h4>
+                                <table id="idtable" class="table">
+                                    <tr><td></td><td>05-mar</td><td>Last Balance</td><td class="amount">3560</td></tr>
+                                    <tr class="htmlentry"></tr>
+                                    <tr class="total"><td></td><td></td><td>Total</td><td class="amount">8563</td></tr>
+                                    <tr><td></td><td>15-mar</td><td>Current Balance</td><td class="amount" id="balance_id">0</td></tr>
+                                    <tr class="wsales"><td></td><td>15-mar</td><td>Sales</td><td id="idcalcsales" class="amount sales">0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h4 class="card-title">bsnl</h4>
+                                <table id="bsnltable" class="table">
+                                    <tr><td></td><td>05-mar</td><td>Last Balance</td><td class="amount">3560</td></tr>
+                                    <tr class="htmlentry"></tr>
+                                    <tr class="total"><td></td><td></td><td>Total</td><td class="amount">8563</td></tr>
+                                    <tr><td></td><td>15-mar</td><td>Current Balance</td><td class="amount" id="balance_bsnl">0</td></tr>
+                                    <tr class="wsales"><td></td><td>15-mar</td><td>Sales</td><td id="bsnlcalcsales" class="amount sales">0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h4 class="card-title">multi</h4>
+                                <table id="multitable" class="table">
+                                    <tr><td></td><td>05-mar</td><td>Last Balance</td><td class="amount">3560</td></tr>
+                                    <tr class="htmlentry"></tr>
+                                    <tr class="total"><td></td><td></td><td>Total</td><td class="amount">8563</td></tr>
+                                    <tr><td></td><td>15-mar</td><td>Current Balance</td><td class="amount"><span id="balance_multi">0</span></td></tr>
+                                    <tr class="wsales"><td></td><td>15-mar</td><td>Sales</td><td id="multicalcsales" class="amount sales">0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                          
+                </div>
+                <div class="col-3">
+                    <form>
+                        <h5>Load Stock</h5>
+                      <div class="form-group">
+                        <div class="dropdown">
+                          <select class="custom-select" id="loadstock_carrier">
+                          <option selected>Select Carrier</option>
+                          <option value="airtel">airtel</option>
+                          <option value="jio">jio</option>
+                          <option value="vodafone">vodafone</option>
+                          <option value="idea">idea</option>
+                          <option value="bsnl">bsnl</option>
+                          <option value="multi">multi</option>
+                        </select>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input type="text" id="loadstock_amount" class="form-control mb-2" placeholder="Amount ₹">
+                        <button type="button" class="btn btn-primary" id="loadstock">Load Stock</button>
+                      </div>
+                    </form>
+                    <form>
+                        <h5>Current Balance</h5>
+                      <div class="form-group">
+                        <div class="dropdown">
+                          <select class="custom-select" id="balance_carrier">
+                          <option selected>Select Carrier</option>
+                          <option value="airtel">airtel</option>
+                          <option value="jio">jio</option>
+                          <option value="vodafone">vodafone</option>
+                          <option value="idea">idea</option>
+                          <option value="bsnl">bsnl</option>
+                          <option value="multi">multi</option>
+                        </select>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input type="text" class="form-control mb-2" id="balance_amount" placeholder="Amount ₹">
+                        <button type="button" class="btn btn-primary" id="currentbalance">Load Current Balance</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <table class="table" id="wcashtable">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th class="">count</th>
+                            <th class="text-right">₹ Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="font-weight-bold">
+                            <td>2000 x</td>
+                            <td><input type="text" class="form-control" id="c2000"></td>
+                            <td><span>₹ </span><span id="c2000ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>500 x</td>
+                            <td><input type="text" class="form-control" id="c500"></td>
+                            <td><span>₹ </span><span id="c500ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>200 x</td>
+                            <td><input type="text" class="form-control" id="c200"></td>
+                            <td><span>₹ </span><span id="c200ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>100 x</td>
+                            <td><input type="text" class="form-control" id="c100"></td>
+                            <td><span>₹ </span><span id="c100ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>50 x</td>
+                            <td><input type="text" class="form-control" id="c50"></td>
+                            <td><span>₹ </span><span id="c50ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>20 x</td>
+                            <td><input type="text" class="form-control" id="c20"></td>
+                            <td><span>₹ </span><span id="c20ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>10 x</td>
+                            <td><input type="text" class="form-control" id="c10"></td>
+                            <td><span>₹ </span><span id="c10ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>10 x</td>
+                            <td><input type="text" class="form-control" id="c10c"></td>
+                            <td><span>₹ </span><span id="c10cans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>5 x</td>
+                            <td><input type="text" class="form-control" id="c5"></td>
+                            <td><span>₹ </span><span id="c5ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>2 x</td>
+                            <td><input type="text" class="form-control" id="c2"></td>
+                            <td><span>₹ </span><span id="c2ans">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>1 x</td>
+                            <td><input type="text" class="form-control" id="c1"></td>
+                            <td><span>₹ </span><span id="c1ans">0</span></td>
+                        </tr>
+                        <tr class="text-primary font-weight-bold">
+                            <td>Cash In Ledger</td>
+                            <td></td>
+                            <td><span>₹ </span><span id="tcashcalc">0</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-3">
+                    <table class="table" id="wsalestable">
+                      <thead>
+                        <tr>
+                          <th>Description</th>
+                          <th class="text-right">₹ Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="font-weight-bold">
+                          <td>Cash</td>
+                          <td>₹ <span id="lastcash">0</span></td>
+                        </tr>
+                        <tr>
+                          <td>airtel Sales</td>
+                          <td>₹ <span id="atsales">0</span></td>
+                        </tr>
+                        <tr>
+                          <td>jio Sales</td>
+                          <td>₹ <span id="jiosales">0</span></td>
+                        </tr>
+                        <tr>
+                          <td>vodafone Sales</td>
+                          <td>₹ <span id="vosales">0</span></td>
+                        </tr>
+                        <tr>
+                          <td>idea Sales</td>
+                          <td>₹ <span id="idsales">0</span></td>
+                        </tr>
+                        <tr>
+                          <td>bsnl Sales</td>
+                          <td>₹ <span id="bsnlsales">0</span></td>
+                        </tr>
+                        <tr>
+                          <td>multi Sales</td>
+                          <td>₹ <span id="multisales">0</span></td>
+                        </tr>
+                        <tr class="text-primary font-weight-bold">
+                          <td>Expected Cash</td>
+                          <td>₹ <span id="expcash">0</span></td>
+                        </tr>
+                        <tr class="text-primary font-weight-bold">
+                            <td>Cash In Ledger</td>
+                            <td><span>₹ </span><span id="tcashcalc">0</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

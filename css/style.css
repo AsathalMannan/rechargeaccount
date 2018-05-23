@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,600i,700');
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+#addentry{
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    /* color: #fff; */
+    border-radius: 0.75rem;
+}
+
+.table{
+    font-size: 12px;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 0.2rem;
+  border-top: 0px;
+}
+
+.amount{
+    text-align: right;
+}
+
+.total{
+    color: #aaa;
+}
+
+.wsales{
+    font-weight: bold;
+}
+
+#wsalestable > tbody > tr > td:nth-child(2){
+    text-align: right;
+}
+
+#wcashtable > tbody > tr > td:nth-child(3){
+    text-align: right;
+}
+
+#wcashtable > tbody > tr > td > input{
+    font-size: 12px;
+    height: 1.5em;
+    width: 5em;
+    padding:2px;
+}
+
+.delete-row{
+    cursor: pointer;
+    background: transparent;
+}
