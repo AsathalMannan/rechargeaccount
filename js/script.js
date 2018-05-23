@@ -4,28 +4,70 @@ var date = today.getDate();
 var month = today.getMonth()+1;
 var year = today.getFullYear();
 
+// SALES CALCULATOR
+var total; 
+var row_count;
+// $('#attable tr:not(:first-child, :last-child)').on("DOMSubtreeModified", function(){ 
+//     console.log('entered event dom');
+//     var amount = document.querySelectorAll('#attable .amount');
+//     total = 0;
+//     for (var i = 0; i < amount.length; i++)
+//     {
+//         total += parseInt(amount[i].innerText);
+//     }
+// })
+// console.log(total);
+// document.getElementById('atcalcsales').innerHTML = total;
+
+var list = document.getElementById("attable");
+
+var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+
+var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+        if (mutation.type === 'childList') {
+            console.log("mutation!", mutation);
+            var amount = document.querySelectorAll('#attable .amount');
+            total = 0;
+            for (var i = 0; i < amount.length; i++)
+            {
+                total += parseInt(amount[i].innerText);
+            }
+            
+        }
+    });
+});
+document.getElementById('atcalcsales').innerHTML = total;
+
+observer.observe(list, {
+    attributes: true,
+    childList: true,
+    characterData: true,
+    subtree: true
+});
+
 // LOAD STOCK
 $('#loadstock').click(function(){
     var loadstock_carrier = document.getElementById("loadstock_carrier").value;
     var loadstock_amount = document.getElementById('loadstock_amount').value;
-    var inserthtml = "<td><span class=\"lnr lnr-circle-minus delete-row\" onclick=\"deleterow();\"></span></td><td>"+date+"-"+month+"</td><td>Stock Purchase</td><td class=\"amount\">"+loadstock_amount+"</td>";
+    var inserthtml = "<tr class=\"htmlentry\"><td><span class=\"lnr lnr-circle-minus delete-row\" ></span></td><td>"+date+"-"+month+"</td><td>Stock Purchase</td><td class=\"amount\">"+loadstock_amount+"</td></tr>";
     if (loadstock_carrier == "airtel") {
-        $("#attable .htmlentry").append(inserthtml);
+        $(inserthtml).insertAfter($("#athtmlentry"));
     }
     else if (loadstock_carrier == "jio") {
-        $("#jiotable .htmlentry").append(inserthtml);
+        $(inserthtml).insertAfter($("#jiohtmlentry"));
     }
     else if (loadstock_carrier == "vodafone") {
-        $("#votable .htmlentry").append(inserthtml);
+        $(inserthtml).insertAfter($("#vohtmlentry"));
     }
     else if (loadstock_carrier == "idea") {
-        $("#idtable .htmlentry").append(inserthtml);
+        $(inserthtml).insertAfter($("#idhtmlentry"));
     }
     else if (loadstock_carrier == "bsnl") {
-        $("#bsnltable .htmlentry").append(inserthtml);
+        $(inserthtml).insertAfter($("#bsnlhtmlentry"));
     }
     else if (loadstock_carrier == "multi") {
-        $("#multitable .htmlentry").append(inserthtml);
+        $(inserthtml).insertAfter($("#multihtmlentry"));
     }
 })
 
@@ -55,12 +97,15 @@ $('#currentbalance').click(function(){
 })
 
 // DELETE STOCK
-function deleterow(){
-    $("table").find('.htmlentry').each(function(){
-        $(this).remove();
-    });
-}
+// function deleterow() {
+//     $("table").find('.delete-row').each(function(){
+//         $(this).parents('tr').remove();
+//     })
+// };
 
+$("table").on('click', '.delete-row', function() {
+    $(this).parents('tr').remove();
+})
 
 // CASH IN LEDGER
 var totalcash, tcashcalc, c2000ans, c500ans, c200ans, c100ans, c50ans, c20ans, c10ans, c10cans, c5ans, c2ans, c1ans = 0;
@@ -88,12 +133,12 @@ $(":input").bind("keyup change", function(e) {
 var expcash, totalsales, lastcash, atsales, jiosales, vosales, idsales, bsnlsales, multisales = 0;
 $(".sales").change(function(e) {
     lastcash = document.querySelector('#lastcash');
-    document.querySelector('#atsales').innerHTML = atsales = document.querySelector('#atcalcsales');
-    document.querySelector('#jiosales').innerHTML = jiosales = document.querySelector('#jiocalcsales');
-    document.querySelector('#vosales').innerHTML = vosales = document.querySelector('#vocalcsales');
-    document.querySelector('#idsales').innerHTML = idsales = document.querySelector('#idcalcsales');
-    document.querySelector('#bsnlsales').innerHTML = bsnlsales = document.querySelector('#bsnlcalcsales');
-    document.querySelector('#multisales').innerHTML = multisales = document.querySelector('#multicalcsales');
+    document.querySelector('#atsales').innerHTML = atsales = document.querySelector('#atcalcsales').value;
+    document.querySelector('#jiosales').innerHTML = jiosales = document.querySelector('#jiocalcsales').value;
+    document.querySelector('#vosales').innerHTML = vosales = document.querySelector('#vocalcsales').value;
+    document.querySelector('#idsales').innerHTML = idsales = document.querySelector('#idcalcsales').value;
+    document.querySelector('#bsnlsales').innerHTML = bsnlsales = document.querySelector('#bsnlcalcsales').value;
+    document.querySelector('#multisales').innerHTML = multisales = document.querySelector('#multicalcsales').value;
     totalsales = atsales + jiosales + vosales + idsales + bsnlsales + multisales;
     expcash = totalsales + lastcash;
     document.querySelector('#expcash').innerHTML = expcash;
