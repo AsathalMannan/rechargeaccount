@@ -7,50 +7,49 @@ var year = today.getFullYear();
 // SALES CALCULATOR
 var total; 
 var row_count;
-// $('#attable tr:not(:first-child, :last-child)').on("DOMSubtreeModified", function(){ 
-//     console.log('entered event dom');
-//     var amount = document.querySelectorAll('#attable .amount');
-//     total = 0;
-//     for (var i = 0; i < amount.length; i++)
-//     {
-//         total += parseInt(amount[i].innerText);
-//     }
-// })
-// console.log(total);
-// document.getElementById('atcalcsales').innerHTML = total;
-
-var list = document.getElementById("attable");
-
-var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-
-var observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-        if (mutation.type === 'childList') {
-            console.log("mutation!", mutation);
-            var amount = document.querySelectorAll('#attable .amount');
-            total = 0;
-            for (var i = 0; i < amount.length; i++)
-            {
-                total += parseInt(amount[i].innerText);
-            }
-            
+$('body').on("click", '#Calculate', function(){ 
+    var tableid = ["at", "jio", "vo", "id", "bsnl", "multi"];
+    tableid.forEach(function(element){
+        var pretotalvalue = document.querySelectorAll('#'+element+'table .pretotal');
+        pretotal = 0;
+        for (var i = 0; i < pretotalvalue.length; i++){
+            pretotal += parseInt(pretotalvalue[i].innerText);
         }
+        document.querySelector('#'+element+'total').innerHTML = pretotal;
     });
-});
-document.getElementById('atcalcsales').innerHTML = total;
 
-observer.observe(list, {
-    attributes: true,
-    childList: true,
-    characterData: true,
-    subtree: true
-});
+    tableid.forEach(function(element){
+        var amount = document.querySelectorAll('#'+element+'table .amount');
+        total = 0;
+        for (var i = 0; i < amount.length; i++)
+        {
+            total += parseInt(amount[i].innerText);
+        }
+        document.querySelector('#'+element+'calcsales').innerHTML = total;
+    });
+
+    // OVERALL SALES CALCULATOR
+    var expcash, totalsales, lastcash, atsales, jiosales, vosales, idsales, bsnlsales, multisales = 0;
+
+        lastcash = parseInt(document.querySelector('#lastcash').innerHTML);
+        document.querySelector('#atsales').innerHTML = atsales = parseInt(document.querySelector('#atcalcsales').innerHTML);
+        document.querySelector('#jiosales').innerHTML = jiosales = parseInt(document.querySelector('#jiocalcsales').innerHTML);
+        document.querySelector('#vosales').innerHTML = vosales = parseInt(document.querySelector('#vocalcsales').innerHTML);
+        document.querySelector('#idsales').innerHTML = idsales = parseInt(document.querySelector('#idcalcsales').innerHTML);
+        document.querySelector('#bsnlsales').innerHTML = bsnlsales = parseInt(document.querySelector('#bsnlcalcsales').innerHTML);
+        document.querySelector('#multisales').innerHTML = multisales = parseInt(document.querySelector('#multicalcsales').innerHTML);
+        totalsales = atsales + jiosales + vosales + idsales + bsnlsales + multisales;
+        expcash = totalsales + lastcash;
+        document.querySelector('#expcash').innerHTML = expcash;
+
+    
+})
 
 // LOAD STOCK
 $('#loadstock').click(function(){
     var loadstock_carrier = document.getElementById("loadstock_carrier").value;
     var loadstock_amount = document.getElementById('loadstock_amount').value;
-    var inserthtml = "<tr class=\"htmlentry\"><td><span class=\"lnr lnr-circle-minus delete-row\" ></span></td><td>"+date+"-"+month+"</td><td>Stock Purchase</td><td class=\"amount\">"+loadstock_amount+"</td></tr>";
+    var inserthtml = "<tr class=\"htmlentry\"><td><span class=\"lnr lnr-circle-minus delete-row\"></span></td><td>"+date+"-"+month+"</td><td>Stock Purchase</td><td class=\"amount pretotal\">"+loadstock_amount+"</td></tr>";
     if (loadstock_carrier == "airtel") {
         $(inserthtml).insertAfter($("#athtmlentry"));
     }
@@ -72,7 +71,8 @@ $('#loadstock').click(function(){
 })
 
 // CURRENT BALANCE
-$('#currentbalance').click(function(){
+$('body').on('click', '#currentbalance', function(){
+    console.log("entered cb");
     var balance_carrier = document.getElementById("balance_carrier").value;
     var balance_amount = document.getElementById('balance_amount').value;
     console.log(balance_amount);
@@ -97,12 +97,6 @@ $('#currentbalance').click(function(){
 })
 
 // DELETE STOCK
-// function deleterow() {
-//     $("table").find('.delete-row').each(function(){
-//         $(this).parents('tr').remove();
-//     })
-// };
-
 $("table").on('click', '.delete-row', function() {
     $(this).parents('tr').remove();
 })
@@ -129,17 +123,3 @@ $(":input").bind("keyup change", function(e) {
     
 })
 
-// SALES CALCULATOR
-var expcash, totalsales, lastcash, atsales, jiosales, vosales, idsales, bsnlsales, multisales = 0;
-$(".sales").change(function(e) {
-    lastcash = document.querySelector('#lastcash');
-    document.querySelector('#atsales').innerHTML = atsales = document.querySelector('#atcalcsales').value;
-    document.querySelector('#jiosales').innerHTML = jiosales = document.querySelector('#jiocalcsales').value;
-    document.querySelector('#vosales').innerHTML = vosales = document.querySelector('#vocalcsales').value;
-    document.querySelector('#idsales').innerHTML = idsales = document.querySelector('#idcalcsales').value;
-    document.querySelector('#bsnlsales').innerHTML = bsnlsales = document.querySelector('#bsnlcalcsales').value;
-    document.querySelector('#multisales').innerHTML = multisales = document.querySelector('#multicalcsales').value;
-    totalsales = atsales + jiosales + vosales + idsales + bsnlsales + multisales;
-    expcash = totalsales + lastcash;
-    document.querySelector('#expcash').innerHTML = expcash;
-});
