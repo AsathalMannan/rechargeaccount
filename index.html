@@ -15,15 +15,15 @@
     <nav class="navbar navbar-light bg-light">
         <h5>Recharge Accounts</h5>
     </nav>
-    <section class="mt-5">
+    <section class="mt-2">
         <div class="container-fluid">
+            <h5 class="text-center font-weight-bold pt-2 mb-5">Weekly Entry</h5>
             <div class="row">
-                <div class="col-md-12 " id="addentry">
-                    <h5 class="text-center text-light font-weight-bold pt-2">Weekly Entry</h5>
-                    <div class="card-deck mt-3">
-                        <div class="card text-center">
+                <div class="col-md-8 mr-5 ml-4" id="addentry">
+                    <div class="card-deck mb-4">
+                        <div class="card text-center mr-3">
                             <div class="card-body">
-                                <h4 class="card-title">airtel</h4>
+                                <h5 class="card-title">airtel</h5>
                                 <table id="attable" class="table">
                                     <tr id="athtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount pretotal">3560</td></tr>
                                     <tr class="total"><td></td><td></td><td>Total</td><td id="attotal" class="amount">0</td></tr>
@@ -32,9 +32,9 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card text-center">
+                        <div class="card text-center mr-3">
                             <div class="card-body">
-                                <h4 class="card-title">jio</h4>
+                                <h5 class="card-title">jio</h5>
                                 <table id="jiotable" class="table">
                                     <tr id="jiohtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount pretotal">3560</td></tr>
                                     <tr class="total"><td></td><td></td><td>Total</td><td id="jiototal" class="amount">0</td></tr>
@@ -43,9 +43,12 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card text-center">
+                    </div>
+
+                    <div class="card-deck mb-4">
+                        <div class="card text-center m-3">
                             <div class="card-body">
-                                <h4 class="card-title">vodafone</h4>
+                                <h5 class="card-title">vodafone</h5>
                                 <table id="votable" class="table">
                                     <tr id="vohtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount pretotal">3560</td></tr>
                                     <tr class="total"><td></td><td></td><td>Total</td><td id="vototal" class="amount">0</td></tr>
@@ -54,12 +57,10 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="card-deck mt-3 mb-3">
-                        <div class="card text-center">
+                    
+                        <div class="card text-center m-3">
                             <div class="card-body">
-                                <h4 class="card-title">idea</h4>
+                                <h5 class="card-title">idea</h5>
                                 <table id="idtable" class="table">
                                     <tr id="idhtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount pretotal">3560</td></tr>
                                     <tr class="total"><td></td><td></td><td>Total</td><td id="idtotal" class="amount">0</td></tr>
@@ -68,9 +69,12 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="card-deck mt-3 mb-3">
                         <div class="card text-center">
                             <div class="card-body">
-                                <h4 class="card-title">bsnl</h4>
+                                <h5 class="card-title">bsnl</h5>
                                 <table id="bsnltable" class="table">
                                     <tr id="bsnlhtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount pretotal">3560</td></tr>
                                     <tr class="total"><td></td><td></td><td>Total</td><td id="bsnltotal" class="amount">0</td></tr>
@@ -81,7 +85,7 @@
                         </div>
                         <div class="card text-center">
                             <div class="card-body">
-                                <h4 class="card-title">multi</h4>
+                                <h5 class="card-title">multi</h5>
                                 <table id="multitable" class="table">
                                     <tr id="multihtmlentry"><td></td><td>05-mar</td><td>Last Balance</td><td class="amount pretotal">3560</td></tr>
                                     <tr class="total"><td></td><td></td><td>Total</td><td id="multitotal" class="amount">0</td></tr>
@@ -134,13 +138,15 @@
                     </form>
                     <button type="button" class="btn btn-primary" id="Calculate">Calculate</button>
                 </div> -->
-            </div>
-        </div>
-    </section>
-    <section class="mt-5">
-        <div class="container">
-            <div class="row">
+            <!-- </div>
+        </div> -->
+    <!-- </section>
+    <section class="mt-5"> -->
+        <!-- <div class="container">
+            <div class="row"> -->
                 <div class="col-3">
+                <div class="card text-center">
+                <div class="card-body">
                     <table class="table" id="wcashtable">
                         <thead>
                         <tr>
@@ -205,15 +211,15 @@
                             <td><input type="text" class="form-control" id="c1"></td>
                             <td><span>₹ </span><span id="c1ans">0</span></td>
                         </tr>
-                        <tr class="text-primary font-weight-bold">
+                        <tr class="font-weight-bold">
                             <td>Cash In Ledger</td>
                             <td></td>
                             <td><span>₹ </span><span id="tcashcalc">0</span></td>
                         </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="col-4">
+                <!-- </div>
+                <div class="col-4"> -->
                     <table class="table" id="wsalestable">
                       <thead>
                         <tr>
@@ -223,7 +229,7 @@
                       </thead>
                       <tbody>
                         <tr class="font-weight-bold">
-                          <td>Cash</td>
+                          <td>Previous Cash</td>
                           <td>₹ <span id="lastcash">0</span></td>
                         </tr>
                         <tr>
@@ -250,11 +256,11 @@
                           <td>multi Sales</td>
                           <td>₹ <span id="multisales">0</span></td>
                         </tr>
-                        <tr class="text-primary font-weight-bold">
+                        <tr class="font-weight-bold">
                           <td>Expected Cash</td>
                           <td>₹ <span id="expcash">0</span></td>
                         </tr>
-                        <tr class="text-primary font-weight-bold">
+                        <tr class="font-weight-bold">
                             <td>Cash In Ledger</td>
                             <td><span>₹ </span><span id="tcashcalc">0</span></td>
                         </tr>
@@ -263,6 +269,8 @@
                 </div>
             </div>
         </div>
+            <!-- </div>
+        </div> -->
     </section>
 
 
