@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <h5 class="text-center font-weight-bold pt-2 mb-5">Weekly Entry</h5>
             <div class="row">
-                <div class="col-md-8 mr-5 ml-4" id="addentry">
+                <div class="col-md-6 mr-0 ml-0" id="addentry">
                     <div class="card-deck mb-4">
                         <div class="card text-center">
                             <div class="card-body">
@@ -98,209 +98,189 @@
                         </div>
                     </div>
                     <div class="card-deck mt-3 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="card-title">Load Current Balance</h6>
-                                        <form class="form-inline">
-                                            <div class="form-group mr-3">
-                                                <div class="dropdown w-50">
-                                                    <select class="custom-select" id="balance_carrier">
-                                                        <option selected>Select Carrier</option>
-                                                        <option value="airtel">airtel</option>
-                                                        <option value="jio">jio</option>
-                                                        <option value="vodafone">vodafone</option>
-                                                        <option value="idea">idea</option>
-                                                        <option value="bsnl">bsnl</option>
-                                                        <option value="multi">multi</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control mr-3 w-50" id="balance_amount" placeholder="Amount ₹">
-                                                <button type="button" class="btn btn-primary" id="currentbalance">Load Current Balance</button>
-                                            </div>
-                                        </form>
-                                </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Load Current Balance</h6>
+                                <form class="mb-4">
+                                    <div class="form-group">
+                                        <div class="dropdown">
+                                            <select class="custom-select" id="balance_carrier">
+                                                <option selected>Select Carrier</option>
+                                                <option value="airtel">airtel</option>
+                                                <option value="jio">jio</option>
+                                                <option value="vodafone">vodafone</option>
+                                                <option value="idea">idea</option>
+                                                <option value="bsnl">bsnl</option>
+                                                <option value="multi">multi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="balance_amount" placeholder="Amount ₹">
+                                        <button type="button" class="btn btn-primary" id="currentbalance">Load Current Balance</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title">Load Stock</h6>
+                                <form class=" mt-3">
+                                    <div class="form-group">
+                                    <div class="dropdown mr-3">
+                                        <select class="custom-select" id="loadstock_carrier">
+                                        <option selected>Select Carrier</option>
+                                        <option value="airtel">airtel</option>
+                                        <option value="jio">jio</option>
+                                        <option value="vodafone">vodafone</option>
+                                        <option value="idea">idea</option>
+                                        <option value="bsnl">bsnl</option>
+                                        <option value="multi">multi</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="loadstock_amount" class="form-control mr-3" placeholder="Amount ₹">
+                                        <button type="button" class="btn btn-primary" id="loadstock">Load Stock</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                           
                 </div>
-                <!-- <div class="col-3">
-                    <form>
-                        <h5>Load Stock</h5>
-                      <div class="form-group">
-                        <div class="dropdown">
-                          <select class="custom-select" id="loadstock_carrier">
-                          <option selected>Select Carrier</option>
-                          <option value="airtel">airtel</option>
-                          <option value="jio">jio</option>
-                          <option value="vodafone">vodafone</option>
-                          <option value="idea">idea</option>
-                          <option value="bsnl">bsnl</option>
-                          <option value="multi">multi</option>
-                        </select>
-                      </div>
-                      <div class="form-group mt-2">
-                        <input type="text" id="loadstock_amount" class="form-control mb-2" placeholder="Amount ₹">
-                        <button type="button" class="btn btn-primary" id="loadstock">Load Stock</button>
-                      </div>
-                    </form>
-                    <form>
-                        <h5>Current Balance</h5>
-                      <div class="form-group">
-                        <div class="dropdown">
-                          <select class="custom-select" id="balance_carrier">
-                          <option selected>Select Carrier</option>
-                          <option value="airtel">airtel</option>
-                          <option value="jio">jio</option>
-                          <option value="vodafone">vodafone</option>
-                          <option value="idea">idea</option>
-                          <option value="bsnl">bsnl</option>
-                          <option value="multi">multi</option>
-                        </select>
-                      </div>
-                      <div class="form-group mt-2">
-                        <input type="text" class="form-control mb-2" id="balance_amount" placeholder="Amount ₹">
-                        <button type="button" class="btn btn-primary" id="currentbalance">Load Current Balance</button>
-                      </div>
-                    </form>
-                    <button type="button" class="btn btn-primary" id="Calculate">Calculate</button>
-                </div> -->
-            <!-- </div>
-        </div> -->
+
                 <div class="col-auto">
-                <div class="card text-center p-3">
-                <div class="card-body">
-                    <table class="table" id="wcashtable">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th class="w-50">count</th>
-                            <th class="text-right">Amount</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr class="font-weight-bold">
-                            <td>2000 x</td>
-                            <td><input type="text" class="form-control" id="c2000"></td>
-                            <td><span>₹ </span><span id="c2000ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>500 x</td>
-                            <td><input type="text" class="form-control" id="c500"></td>
-                            <td><span>₹ </span><span id="c500ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>200 x</td>
-                            <td><input type="text" class="form-control" id="c200"></td>
-                            <td><span>₹ </span><span id="c200ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>100 x</td>
-                            <td><input type="text" class="form-control" id="c100"></td>
-                            <td><span>₹ </span><span id="c100ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>50 x</td>
-                            <td><input type="text" class="form-control" id="c50"></td>
-                            <td><span>₹ </span><span id="c50ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>20 x</td>
-                            <td><input type="text" class="form-control" id="c20"></td>
-                            <td><span>₹ </span><span id="c20ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>10 x</td>
-                            <td><input type="text" class="form-control" id="c10"></td>
-                            <td><span>₹ </span><span id="c10ans">0</span></td>
-                        </tr>
-                    
-                        <tr>
-                            <td>10 x</td>
-                            <td><input type="text" class="form-control" id="c10c"></td>
-                            <td><span>₹ </span><span id="c10cans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>5 x</td>
-                            <td><input type="text" class="form-control" id="c5"></td>
-                            <td><span>₹ </span><span id="c5ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>2 x</td>
-                            <td><input type="text" class="form-control" id="c2"></td>
-                            <td><span>₹ </span><span id="c2ans">0</span></td>
-                        </tr>
-                        <tr>
-                            <td>1 x</td>
-                            <td><input type="text" class="form-control" id="c1"></td>
-                            <td><span>₹ </span><span id="c1ans">0</span></td>
-                        </tr>
-                        <tr class="font-weight-bold">
-                            <td colspan="2">Cash In Ledger</td>
-                            <td class="float-right"><span>₹ </span><span id="tcashcalc">0</span></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                <!-- </div>
-                <div class="col-4"> --><br>
-                    <table class="table pt-5" id="wsalestable">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th class="text-right">₹ Amount</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="font-weight-bold">
-                          <td>Previous Cash</td>
-                          <td>₹ <span id="lastcash">0</span></td>
-                        </tr>
-                        <tr>
-                          <td>airtel Sales</td>
-                          <td>₹ <span id="atsales">0</span></td>
-                        </tr>
-                        <tr>
-                          <td>jio Sales</td>
-                          <td>₹ <span id="jiosales">0</span></td>
-                        </tr>
-                        <tr>
-                          <td>vodafone Sales</td>
-                          <td>₹ <span id="vosales">0</span></td>
-                        </tr>
-                        <tr>
-                          <td>idea Sales</td>
-                          <td>₹ <span id="idsales">0</span></td>
-                        </tr>
-                        <tr>
-                          <td>bsnl Sales</td>
-                          <td>₹ <span id="bsnlsales">0</span></td>
-                        </tr>
-                        <tr>
-                          <td>multi Sales</td>
-                          <td>₹ <span id="multisales">0</span></td>
-                        </tr>
-                        <tr class="font-weight-bold text-info">
-                          <td>Expected Cash</td>
-                          <td>₹ <span id="expcash">0</span></td>
-                        </tr>
-                        <tr class="font-weight-bold text-primary">
-                            <td>Cash In Ledger</td>
-                            <td><span>₹ </span><span id="tcashcalc">0</span></td>
-                        </tr>
-                        <tr class="font-weight-bold text-success">
-                                <td>Difference</td>
-                                <td><span>₹ </span><span id="cashdiff">0</span></td>
-                            </tr>
-                      </tbody>
-                    </table>
-                    <button type="button" class="btn btn-primary mr-3" id="Calculate">Calculate</button>
-                    <button type="button" class="btn btn-success" id="Calculate">File Account</button>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <table class="table" id="wcashtable">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="w-50">count</th>
+                                    <th class="text-right">Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="font-weight-bold">
+                                    <td>2000 x</td>
+                                    <td><input type="text" class="form-control" id="c2000"></td>
+                                    <td><span>₹ </span><span id="c2000ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>500 x</td>
+                                    <td><input type="text" class="form-control" id="c500"></td>
+                                    <td><span>₹ </span><span id="c500ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>200 x</td>
+                                    <td><input type="text" class="form-control" id="c200"></td>
+                                    <td><span>₹ </span><span id="c200ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>100 x</td>
+                                    <td><input type="text" class="form-control" id="c100"></td>
+                                    <td><span>₹ </span><span id="c100ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>50 x</td>
+                                    <td><input type="text" class="form-control" id="c50"></td>
+                                    <td><span>₹ </span><span id="c50ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>20 x</td>
+                                    <td><input type="text" class="form-control" id="c20"></td>
+                                    <td><span>₹ </span><span id="c20ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>10 x</td>
+                                    <td><input type="text" class="form-control" id="c10"></td>
+                                    <td><span>₹ </span><span id="c10ans">0</span></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>10 x</td>
+                                    <td><input type="text" class="form-control" id="c10c"></td>
+                                    <td><span>₹ </span><span id="c10cans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5 x</td>
+                                    <td><input type="text" class="form-control" id="c5"></td>
+                                    <td><span>₹ </span><span id="c5ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2 x</td>
+                                    <td><input type="text" class="form-control" id="c2"></td>
+                                    <td><span>₹ </span><span id="c2ans">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1 x</td>
+                                    <td><input type="text" class="form-control" id="c1"></td>
+                                    <td><span>₹ </span><span id="c1ans">0</span></td>
+                                </tr>
+                                <tr class="font-weight-bold">
+                                    <td colspan="2">Cash In Ledger</td>
+                                    <td class="float-right"><span>₹ </span><span id="tcashcalc">0</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        <br>
+                            <table class="table pt-5" id="wsalestable">
+                            <thead>
+                                <tr>
+                                <th>#</th>
+                                <th class="text-right">₹ Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="font-weight-bold">
+                                <td>Previous Cash</td>
+                                <td>₹ <span id="lastcash">0</span></td>
+                                </tr>
+                                <tr>
+                                <td>airtel Sales</td>
+                                <td>₹ <span id="atsales">0</span></td>
+                                </tr>
+                                <tr>
+                                <td>jio Sales</td>
+                                <td>₹ <span id="jiosales">0</span></td>
+                                </tr>
+                                <tr>
+                                <td>vodafone Sales</td>
+                                <td>₹ <span id="vosales">0</span></td>
+                                </tr>
+                                <tr>
+                                <td>idea Sales</td>
+                                <td>₹ <span id="idsales">0</span></td>
+                                </tr>
+                                <tr>
+                                <td>bsnl Sales</td>
+                                <td>₹ <span id="bsnlsales">0</span></td>
+                                </tr>
+                                <tr>
+                                <td>multi Sales</td>
+                                <td>₹ <span id="multisales">0</span></td>
+                                </tr>
+                                <tr class="font-weight-bold text-info">
+                                <td>Expected Cash</td>
+                                <td>₹ <span id="expcash">0</span></td>
+                                </tr>
+                                <tr class="font-weight-bold text-primary">
+                                    <td>Cash In Ledger</td>
+                                    <td><span>₹ </span><span id="tcashcalc">0</span></td>
+                                </tr>
+                                <tr class="font-weight-bold text-success">
+                                    <td>Difference</td>
+                                    <td><span>₹ </span><span id="cashDiff">0</span></td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <button type="button" class="btn btn-primary mr-3" id="Calculate">Calculate</button>
+                            <button type="button" class="btn btn-success" id="Calculate">File Account</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-            <!-- </div>
-        </div> -->
     </section>
 
 
@@ -314,17 +294,5 @@
     <script src="js/script.js"></script>
     <script src="js/storelocal.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDD6Kes8fyHSpJo-Mel5oEpsdAZ0tO5TrM",
-        authDomain: "recharge-accounts.firebaseapp.com",
-        databaseURL: "https://recharge-accounts.firebaseio.com",
-        projectId: "recharge-accounts",
-        storageBucket: "recharge-accounts.appspot.com",
-        messagingSenderId: "774134663299"
-    };
-    firebase.initializeApp(config);
-    </script>
   </body>
 </html>

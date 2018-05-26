@@ -31,7 +31,7 @@ $('body').on("click", '#Calculate', function(){
     });
 
     // OVERALL SALES CALCULATOR
-    var expcash, totalsales, lastcash, atsales, jiosales, vosales, idsales, bsnlsales, multisales = 0;
+    var cashDiff, expcash, totalsales, lastcash, atsales, jiosales, vosales, idsales, bsnlsales, multisales = 0;
 
         lastcash = parseInt(document.querySelector('#lastcash').innerHTML);
         document.querySelector('#atsales').innerHTML = atsales = parseInt(document.querySelector('#atcalcsales').innerHTML);
@@ -42,6 +42,8 @@ $('body').on("click", '#Calculate', function(){
         document.querySelector('#multisales').innerHTML = multisales = parseInt(document.querySelector('#multicalcsales').innerHTML);
         totalsales = atsales + jiosales + vosales + idsales + bsnlsales + multisales;
         expcash = totalsales + lastcash;
+        cashDiff = expcash - tcashcalc;
+        document.querySelector('#cashDiff').innerHTML = cashDiff;
         document.querySelector('#expcash').innerHTML = expcash;
 
     
@@ -125,3 +127,16 @@ $(":input").bind("keyup change", function(e) {
     
 })
 
+// firebase initialization
+// Initialize Firebase
+// var config = {
+//     apiKey: "AIzaSyDD6Kes8fyHSpJo-Mel5oEpsdAZ0tO5TrM",
+//     authDomain: "recharge-accounts.firebaseapp.com",
+//     databaseURL: "https://recharge-accounts.firebaseio.com",
+//     projectId: "recharge-accounts",
+//     storageBucket: "recharge-accounts.appspot.com",
+//     messagingSenderId: "774134663299"
+// };
+// firebase.initializeApp(config);
+
+// adding data to db
