@@ -5,21 +5,6 @@ var month = today.getMonth()+1;
 var year = today.getFullYear();
 var presentdate = date+'-'+month+'-'+year;
 console.log(presentdate);
-// GETTING DATA FROM DATABASE
-var lastdate;
-var xhr = new XMLHttpRequest();
-xhr.open('GET', '../book.db3', true);
-xhr.responseType = 'arraybuffer';
-
-xhr.onload = function(e) {
-  var uInt8Array = new Uint8Array(this.response);
-  var db = new SQL.Database(uInt8Array);
-  var contents = db.exec("SELECT * FROM file_details ORDER BY file_date DESC LIMIT 1;");
-  // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
-   lastdate = contents[0]['values'][1];
-   console.log(lastdate);
-};
-xhr.send();
 
 // SALES CALCULATOR
 var total; 

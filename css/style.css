@@ -10,6 +10,7 @@ body{
     background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
+    /* box-shadow: 0 6px 15px rgba(36,37,38,0.20); */
 
     height: 4em;
 }
@@ -50,7 +51,7 @@ body{
   border-top: 0px;
 }
 
-.amount{
+.pretotal, .amount{
     text-align: right;
 }
 
@@ -70,9 +71,9 @@ body{
     font-size: 14px;
 }
 
-#wcashtable tr:nth-child(1){
-    text-align: left;
-    margin-left: 0 !important;
+input{
+    border: 0px !important;
+    border-bottom: 1px solid rgba(194, 194, 194, 0.76) !important;  
 }
 
 
